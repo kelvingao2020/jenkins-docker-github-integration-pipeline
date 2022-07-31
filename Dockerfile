@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:11
 EXPOSE 8080
 ADD target/jenkins-pipeline.jar jenkins-pipeline.jar
 ENTRYPOINT ["java", "-jar", "/jenkins-pipeline.jar"]
