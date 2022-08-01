@@ -20,11 +20,11 @@ pipeline {
                 }
             }
         }
-        stage ('Login'){
-            /*steps{
+        /*stage ('Login'){
+            steps{
                 bat 'echo $DOCKER_CREDENTIALS_PSW | docker login -u $DOCKER_CREDENTIALS_USR --password-stdin'
-            }*/
-        }
+            }
+        }*/
         stage ('Push'){
             steps{
                 bat 'docker push kelvingao2020/jenkins-pipeline'
