@@ -3,9 +3,9 @@ pipeline {
     tools {
         maven 'MAVEN'
     }
-    environment {
+    /*environment {
         DOCKER_CREDENTIALS=credentials('kelvingao2020-dockerhub')
-    }
+    }*/
     stages {
         stage ('Build Maven'){
             steps {
