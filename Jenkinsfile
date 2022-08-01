@@ -3,9 +3,9 @@ pipeline {
     tools {
         maven 'MAVEN'
     }
-    environment {
+    /*environment {
         DOCKER_CREDENTIALS=credentials('kelvingao2015-dockerhub')
-    }
+    }*/
     stages {
         stage ('Build Maven'){
             steps {
@@ -16,18 +16,18 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker build -t kelvingao2015/jenkins-pipeline .'
+                    bat 'docker build -t kelvingao2020/jenkins-pipeline .'
                 }
             }
         }
         stage ('Login'){
-            steps{
+            /*steps{
                 bat 'echo $DOCKER_CREDENTIALS_PSW | docker login -u $DOCKER_CREDENTIALS_USR --password-stdin'
-            }
+            }*/
         }
         stage ('Push'){
             steps{
-                bat 'docker push kelvingao2015/jenkins-pipeline'
+                bat 'docker push kelvingao2020/jenkins-pipeline'
             }
         }
     }
