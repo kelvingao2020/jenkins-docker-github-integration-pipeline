@@ -3,9 +3,9 @@ pipeline {
     tools {
         maven 'MAVEN'
     }
-    /*environment {
+    environment {
         DOCKER_CREDENTIALS=credentials('kelvingao2015-dockerhub')
-    }*/
+    }
     stages {
         stage ('Build Maven'){
             steps {
@@ -20,11 +20,11 @@ pipeline {
                 }
             }
         }
-        /*stage ('Login'){
+        stage ('Login'){
             steps{
                 bat 'echo $DOCKER_CREDENTIALS_PSW | docker login -u $DOCKER_CREDENTIALS_USR --password-stdin'
             }
-        } */
+        }
         stage ('Push'){
             steps{
                 bat 'docker push kelvingao2015/jenkins-pipeline'
